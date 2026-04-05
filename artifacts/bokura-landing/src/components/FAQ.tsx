@@ -3,14 +3,38 @@ import { useInView } from "react-intersection-observer";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const faqs = [
-  { q: "What is included in your bookkeeping service?", a: "Our comprehensive service includes daily transaction recording, bank reconciliations, accounts payable and receivable management, and monthly financial reporting tailored to UAE standards." },
-  { q: "Are you registered with the FTA?", a: "Yes, we are fully versed in Federal Tax Authority regulations and can manage your VAT registration, filing, and compliance to ensure you avoid penalties." },
-  { q: "Do you work with free zone companies?", a: "Absolutely. We serve businesses across all major UAE Free Zones (DMCC, JAFZA, DDA, etc.) as well as mainland LLCs, understanding the unique reporting requirements for each." },
-  { q: "How do you handle VAT filing?", a: "We compile your taxable records, calculate output and input VAT, and prepare the official return for timely submission to the FTA portal." },
-  { q: "What's your pricing model?", a: "We offer transparent, flat-rate monthly retainers based on your transaction volume and complexity. No hidden hourly fees — ever." },
-  { q: "How quickly can I get started?", a: "Our onboarding is swift. We can usually begin auditing your current books and setting up our systems within 48 hours of engagement." },
-  { q: "Do you work with businesses outside Dubai?", a: "Yes, we serve clients across the entire UAE and GCC region, providing remote, cloud-based financial management." },
-  { q: "What accounting software do you use?", a: "We work with industry-leading platforms like Xero, QuickBooks, and Zoho, ensuring your data is secure, accessible, and integrated." },
+  {
+    q: "What accounting and bookkeeping services do you provide?",
+    a: "We offer a full suite of services including daily bookkeeping, bank reconciliations, VAT filing, corporate tax registration and filing, financial reporting (P&L, balance sheets, cash flow), WPS-compliant payroll processing, inventory control, and business consultation."
+  },
+  {
+    q: "Do you handle Corporate Tax registration and filing?",
+    a: "Yes. We provide end-to-end corporate tax support — including registration with the Federal Tax Authority, return preparation and filing, advisory on eligible exemptions, and ongoing compliance monitoring."
+  },
+  {
+    q: "How do you handle VAT filing and FTA compliance?",
+    a: "We compile all taxable transactions, calculate your output and input VAT, and submit the return directly to the FTA portal before the deadline — keeping you fully compliant and penalty-free."
+  },
+  {
+    q: "Do you work with free zone companies and mainland LLCs?",
+    a: "Absolutely. We serve businesses across all major UAE Free Zones (DMCC, JAFZA, DDA, and more) as well as mainland LLCs, with tailored reporting for each entity type."
+  },
+  {
+    q: "What financial reports can you prepare for banks or investors?",
+    a: "We prepare Profit & Loss statements, Balance Sheets, Cash Flow reports, and customised project reports — formatted and presentation-ready for banks, investors, or internal management."
+  },
+  {
+    q: "Where are you located and how can I book a meeting?",
+    a: "Our office is conveniently located in Deira, Dubai — easily accessible for clients across Dubai and the Northern Emirates. Meetings are available at your convenience and can be scheduled in-person or remotely, based on your preferred time."
+  },
+  {
+    q: "Do you serve clients outside Dubai?",
+    a: "Yes. We work with businesses across the entire UAE and the wider GCC region, including remote and cloud-based engagements for clients who prefer online management."
+  },
+  {
+    q: "What is your pricing model?",
+    a: "We offer transparent, flat-rate monthly packages based on your business size and transaction volume. No hidden fees, no surprise hourly charges — just clear, predictable costs."
+  },
 ];
 
 export function FAQ() {
