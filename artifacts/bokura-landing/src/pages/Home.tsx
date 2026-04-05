@@ -12,6 +12,8 @@ import { Footer } from "@/components/Footer";
 import { ThreeBackground } from "@/components/ThreeBackground";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { InquireModal } from "@/components/InquireModal";
+import { ScrollProgressBar } from "@/components/ScrollProgressBar";
+import { SectionReveal } from "@/components/SectionReveal";
 
 export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -19,24 +21,48 @@ export default function Home() {
   const handleOpenModal = () => setModalOpen(true);
 
   return (
-    <div className="min-h-screen bg-black text-foreground font-sans relative overflow-x-hidden selection:bg-primary/30">
+    <div className="min-h-screen bg-black text-foreground font-sans relative overflow-x-hidden selection:bg-primary/30 scanline-overlay">
+      <ScrollProgressBar />
       <ThreeBackground />
-      
+
       <Navbar onOpenModal={handleOpenModal} />
-      
+
       <main>
         <Hero onOpenModal={handleOpenModal} />
-        <Services />
-        <ProblemSection />
-        <WhyUs />
-        <About />
-        <Testimonials />
-        <FAQ />
-        <FinalCTA onOpenModal={handleOpenModal} />
+
+        <SectionReveal delay={0}>
+          <Services />
+        </SectionReveal>
+
+        <SectionReveal delay={0.05}>
+          <ProblemSection />
+        </SectionReveal>
+
+        <SectionReveal delay={0}>
+          <WhyUs />
+        </SectionReveal>
+
+        <SectionReveal delay={0.05}>
+          <About />
+        </SectionReveal>
+
+        <SectionReveal delay={0}>
+          <Testimonials />
+        </SectionReveal>
+
+        <SectionReveal delay={0.05}>
+          <FAQ />
+        </SectionReveal>
+
+        <SectionReveal delay={0}>
+          <FinalCTA onOpenModal={handleOpenModal} />
+        </SectionReveal>
       </main>
 
-      <Footer />
-      
+      <SectionReveal delay={0}>
+        <Footer />
+      </SectionReveal>
+
       <FloatingCTA onOpenModal={handleOpenModal} />
       <InquireModal open={modalOpen} onOpenChange={setModalOpen} />
     </div>

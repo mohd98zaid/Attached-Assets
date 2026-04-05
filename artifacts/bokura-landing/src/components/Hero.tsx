@@ -1,12 +1,34 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 
 export function Hero({ onOpenModal }: { onOpenModal: () => void }) {
   const { t } = useLanguage();
 
+  const { scrollY } = useScroll();
+
+  const rawY = useTransform(scrollY, [0, 700], [0, -140]);
+  const rawOpacity = useTransform(scrollY, [0, 500], [1, 0]);
+  const rawScale = useTransform(scrollY, [0, 500], [1, 0.94]);
+  const orbScale = useTransform(scrollY, [0, 600], [1, 1.4]);
+  const orbOpacity = useTransform(scrollY, [0, 500], [0.08, 0.02]);
+
+  const y = useSpring(rawY, { stiffness: 80, damping: 20 });
+  const opacity = useSpring(rawOpacity, { stiffness: 80, damping: 20 });
+  const scale = useSpring(rawScale, { stiffness: 80, damping: 20 });
+
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-24 pb-12 overflow-hidden">
-      <div className="container mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
+      {/* Parallax ambient orb */}
+      <motion.div
+        style={{ scale: orbScale, opacity: orbOpacity }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] sm:w-[700px] md:w-[900px] h-[500px] sm:h-[700px] md:h-[900px] bg-primary rounded-full blur-[140px] pointer-events-none"
+      />
+
+      {/* Parallax hero content */}
+      <motion.div
+        style={{ y, opacity, scale }}
+        className="container mx-auto px-5 sm:px-6 lg:px-8 relative z-10"
+      >
         <div className="max-w-4xl mx-auto text-center">
 
           {/* Badge */}
@@ -24,7 +46,7 @@ export function Hero({ onOpenModal }: { onOpenModal: () => void }) {
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white leading-[1.2] mb-5 tracking-tight"
           >
             {t.hero.title1}
@@ -43,7 +65,7 @@ export function Hero({ onOpenModal }: { onOpenModal: () => void }) {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="text-base sm:text-lg md:text-xl text-gray-300 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed px-2"
           >
             {t.hero.subtitle}
@@ -53,7 +75,7 @@ export function Hero({ onOpenModal }: { onOpenModal: () => void }) {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            transition={{ duration: 0.9, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-16 px-2"
           >
             <button
@@ -87,10 +109,8 @@ export function Hero({ onOpenModal }: { onOpenModal: () => void }) {
             ))}
           </motion.div>
         </div>
-      </div>
+      </motion.div>
 
-      {/* Hero ambient glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] sm:w-[700px] md:w-[900px] h-[500px] sm:h-[700px] md:h-[900px] bg-primary/8 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#050508] to-transparent pointer-events-none" />
     </section>
   );
