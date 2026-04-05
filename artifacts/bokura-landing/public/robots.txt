@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://attached-assets-techedubyte.replit.app/sitemap.xml
