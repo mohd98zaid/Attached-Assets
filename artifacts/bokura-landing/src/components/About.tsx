@@ -2,13 +2,37 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 export function About() {
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.15 });
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   const stats = [
-    { value: "200+", label: "Clients Served" },
-    { value: "99%", label: "FTA Compliance Rate" },
+    { value: "Deira", label: "Dubai HQ" },
+    { value: "UAE", label: "& GCC Coverage" },
     { value: "48h", label: "Onboarding Time" },
-    { value: "GCC", label: "Regional Coverage" },
+    { value: "Flex", label: "Meeting Schedule" },
+  ];
+
+  const highlights = [
+    {
+      icon: (
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+      ),
+      title: "Deira, Dubai",
+      desc: "Conveniently located in the heart of Deira — easily accessible for clients across Dubai and the Northern Emirates."
+    },
+    {
+      icon: (
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+      ),
+      title: "Flexible Meetings",
+      desc: "We work around your schedule — meetings available at your convenience, in-person or remotely."
+    },
+    {
+      icon: (
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+      ),
+      title: "UAE-Wide Support",
+      desc: "Serving mainland LLCs and free zone companies across all Emirates with local regulatory expertise."
+    }
   ];
 
   return (
@@ -23,28 +47,50 @@ export function About() {
           >
             <span className="inline-block text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest mb-3">About BOKURA</span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white mb-4 leading-tight">
-              Built for Dubai's Most{" "}
-              <span className="text-gradient-cyan">Ambitious Enterprises</span>
+              Your Accounting & Audit Office{" "}
+              <span className="text-gradient-cyan">in Deira, Dubai</span>
             </h2>
           </motion.div>
 
+          {/* Main description */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="liquid-glass-static p-6 sm:p-8 md:p-12 relative overflow-hidden rounded-2xl mb-8"
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="liquid-glass-static p-6 sm:p-8 md:p-10 relative overflow-hidden rounded-2xl mb-6"
           >
             <div className="absolute top-0 right-0 w-48 sm:w-64 h-48 sm:h-64 bg-primary/5 rounded-full blur-[80px] pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-48 sm:w-64 h-48 sm:h-64 bg-secondary/5 rounded-full blur-[80px] pointer-events-none" />
             <div className="relative z-10 space-y-4">
               <p className="text-gray-300 text-sm sm:text-base lg:text-lg leading-relaxed">
-                BOKURA Accounting and Bookkeeping L.L.C was founded on a simple premise: Dubai's rapid growth demands financial services that move at the speed of innovation.
+                We are a full-service Accounting & Audit Office based in Deira, Dubai, providing comprehensive financial and business support services for companies across the UAE.
               </p>
               <p className="text-gray-300 text-sm sm:text-base lg:text-lg leading-relaxed">
-                Operating across mainland UAE and major free zones, our team of seasoned financial experts transforms chaotic ledgers into crystal-clear insights. We act as your invisible financial engine — ensuring compliance, driving efficiency, and providing the pristine financial clarity you need to dominate your market.
+                Our team handles a full range of accounting and compliance requirements — from daily bookkeeping and VAT filing to corporate tax and financial reporting — allowing businesses to focus on growth while we manage the numbers.
               </p>
             </div>
           </motion.div>
+
+          {/* Highlight cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+            {highlights.map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.5, delay: 0.3 + idx * 0.1 }}
+                className="liquid-glass p-5 flex gap-3 items-start"
+              >
+                <div className="w-9 h-9 flex items-center justify-center rounded-lg border border-primary/25 bg-primary/10 text-primary shrink-0">
+                  {item.icon}
+                </div>
+                <div>
+                  <h4 className="text-white font-semibold text-sm mb-1">{item.title}</h4>
+                  <p className="text-gray-400 text-xs leading-relaxed">{item.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
 
           {/* Stats row */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
@@ -53,11 +99,11 @@ export function About() {
                 key={idx}
                 initial={{ opacity: 0, y: 16 }}
                 animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
-                transition={{ duration: 0.5, delay: 0.4 + idx * 0.08 }}
-                className="liquid-glass p-4 sm:p-6 text-center"
+                transition={{ duration: 0.5, delay: 0.5 + idx * 0.08 }}
+                className="liquid-glass p-4 sm:p-5 text-center"
                 data-testid={`stat-${idx}`}
               >
-                <div className="text-2xl sm:text-3xl font-display font-bold text-gradient-cyan mb-1">{stat.value}</div>
+                <div className="text-xl sm:text-2xl font-display font-bold text-gradient-cyan mb-1">{stat.value}</div>
                 <div className="text-gray-400 text-xs sm:text-sm">{stat.label}</div>
               </motion.div>
             ))}
