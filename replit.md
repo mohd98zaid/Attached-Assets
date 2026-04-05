@@ -4,6 +4,24 @@
 
 pnpm workspace monorepo using TypeScript. Each package manages its own dependencies.
 
+## Artifacts
+
+### BOKURA Accounting & Bookkeeping Landing Page (`artifacts/bokura-landing`)
+- **Type**: React + Vite (presentation-first, no backend)
+- **Preview Path**: `/` (root)
+- **Purpose**: Premium landing page for BOKURA ACCOUNTING AND BOOKKEEPING L.L.C, a Dubai/UAE-based financial firm
+- **Features**:
+  - Three.js 3D animated background (glowing orbs, rotating coins, grid lines) with CSS fallback for non-WebGL environments
+  - iOS 26 Liquid Glass UI (backdrop-filter blur, cyan/gold glowing borders)
+  - Framer Motion scroll-triggered entrance animations
+  - Full SEO: Dubai/UAE meta tags, JSON-LD LocalBusiness schema, Open Graph
+  - Sections: Navbar, Hero, Services (6 cards), Problem, Why Us, About, Testimonials, FAQ, Final CTA, Footer
+  - Inquiry modal with 4-field form and success message
+  - Floating "Free Health Check" CTA button
+  - Fully responsive (mobile, tablet, desktop)
+- **Dependencies**: three, @types/three, react-intersection-observer, framer-motion
+- **Color palette**: Deep space black (#050508), electric cyan (#00bfff), gold (#d4a017)
+
 ## Stack
 
 - **Monorepo tool**: pnpm workspaces

@@ -1,0 +1,49 @@
+Create a complete, beautiful single-file index.html website for BOKURA ACCOUNTING AND BOOKKEEPING L.L.C — a premium accounting and bookkeeping firm based in Dubai, UAE. This is for running directly on Replit (HTML/CSS/JS template).
+Key Requirements:
+
+One single scrollable HTML file with Tailwind CSS via CDN.
+Beautiful 3D animation background using Three.js (via CDN or Skypack).
+Smooth scroll with 3D parallax effect: As the user scrolls, the 3D camera gently moves forward, tilts, and creates depth. Floating 3D elements (glowing financial orbs, rotating coins, subtle chart icons, faint glowing UAE/Gulf map lines) react to scroll position.
+All UI elements use true iOS 26 Liquid Glass effect: backdrop-filter blur, semi-transparent dark backgrounds, glowing cyan borders, inner glows, hover scale + light-reactive edges.
+Fully responsive and mobile-friendly (perfect on phones, tablets, laptops) with Tailwind breakpoints. Touch-friendly buttons and large tap targets.
+Dark futuristic theme (deep space black background).
+
+SEO (Dubai/UAE/Gulf Optimized):
+
+Title: “BOKURA Accounting & Bookkeeping L.L.C | Expert Accounting & Bookkeeping Services in Dubai, UAE & GCC”
+Meta description, keywords, Open Graph tags optimized for “accounting services Dubai”, “bookkeeping UAE”, “VAT compliance Dubai”, “GCC financial services”.
+JSON-LD structured data for LocalBusiness (Dubai, UAE placeholder address).
+
+Structure (single continuous scroll like a premium landing page):
+
+Fixed Liquid Glass Navbar — Logo “BOKURA”, menu (Services, Why Us, About, Testimonials, FAQ), “Inquire Now” button. Hamburger on mobile. Shrinks and intensifies glass on scroll.
+Hero Section (full viewport) — 3D canvas background + large floating glass headline: “Outsource Your Accounting in Dubai. Focus on Growing Your Business.” Subheadline about bookkeeping stress. Two glass CTAs + trust bar: “UAE VAT Compliant • FTA Ready • Trusted in Dubai & GCC”.
+Problem Section — Glass container highlighting UAE business pain points (VAT, free zone reporting, etc.).
+Services Section — 6 responsive floating Liquid Glass cards: Daily Financial Recording, Bank Reconciliation, Audit-Ready Reporting, Payroll Management, Financial Analysis & Insights, UAE VAT/Tax & GCC Compliance.
+Why Choose Us — 5 elegant glass benefit cards.
+About Us — Short Dubai/UAE-focused professional text.
+Testimonials — 3 floating glass cards.
+FAQ — Clean accordion (vanilla JS or simple details/summary).
+Final CTA — Large glass panel with “Inquire Now” button that opens a modal form.
+
+3D Animation Details:
+
+Full-page or hero 3D canvas using Three.js.
+Subtle animated objects: glowing orbs, slowly rotating coins, soft floating charts, faint UAE outline.
+On scroll: camera parallax movement (forward tilt + depth) for a cinematic “flying through futuristic space” feel.
+Keep 3D lightweight and performant (low-poly, limited particles) so it runs smoothly on mobile and Replit.
+
+Interactive Features:
+
+Floating “Free Financial Health Check” button (sticky bottom-right on mobile).
+Clicking it opens a beautiful Liquid Glass modal with a simple 4-question form (business type, monthly transactions, current pain, email) + success message.
+Smooth scroll behavior.
+
+Additional Requirements:
+
+Include Tailwind CSS via CDN.
+Include Three.js via CDN (Skypack or similar) for easy Replit compatibility.
+All custom CSS for Liquid Glass and 3D canvas styling in one file.
+Vanilla JavaScript for scroll effects, modal, accordion, and 3D interactions.
+Make it ultra-premium, modern, and futuristic — exactly like a 2026 iOS 26 app landing page with stunning 3D scroll depth.
+Output the complete single index.html file with everything embedded. Ready to copy-paste into a new Replit HTML/CSS/JS project and run instantly.
