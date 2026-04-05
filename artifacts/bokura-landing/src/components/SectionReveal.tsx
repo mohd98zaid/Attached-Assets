@@ -9,7 +9,7 @@ interface SectionRevealProps {
 
 export function SectionReveal({ children, delay = 0, className = "" }: SectionRevealProps) {
   return (
-    <div className={`relative ${className}`}>
+    <div className={`relative overflow-x-clip ${className}`}>
       <motion.div
         initial={{
           opacity: 0,
