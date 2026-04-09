@@ -152,7 +152,7 @@ export function Hero({ onOpenModal }: { onOpenModal: () => void }) {
           </motion.div>
 
           {/* ── Headline — word-by-word reveal ──────────────── */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white leading-[1.25] mb-5 tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-[1.25] mb-5 tracking-tight">
             <WordReveal
               text={t.hero.title1}
               baseDelay={0.15}

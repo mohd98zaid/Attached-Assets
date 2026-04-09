@@ -35,7 +35,7 @@ export function FinalCTA({ onOpenModal }: { onOpenModal: () => void }) {
             <motion.span variants={headingVariants} className="inline-block text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest mb-4">
               {t.finalCta.label}
             </motion.span>
-            <motion.h2 variants={headingVariants} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-4 sm:mb-6 leading-tight">
+            <motion.h2 variants={headingVariants} className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white mb-4 sm:mb-6 leading-tight">
               {t.finalCta.title}
             </motion.h2>
             <motion.p variants={headingVariants} className="text-sm sm:text-base md:text-xl text-gray-300 mb-8 sm:mb-10 max-w-xl mx-auto leading-relaxed">
