@@ -5,7 +5,7 @@ import { Services } from "@/components/Services";
 import { ProblemSection } from "@/components/ProblemSection";
 import { WhyUs } from "@/components/WhyUs";
 import { About } from "@/components/About";
-import { Testimonials } from "@/components/Testimonials";
+
 import { FAQ } from "@/components/FAQ";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
@@ -46,10 +46,6 @@ export default function Home() {
 
         <SectionReveal delay={0.05}>
           <About />
-        </SectionReveal>
-
-        <SectionReveal delay={0}>
-          <Testimonials />
         </SectionReveal>
 
         <SectionReveal delay={0.05}>
