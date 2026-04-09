@@ -8,7 +8,10 @@ export function Navbar({ onOpenModal }: { onOpenModal: () => void }) {
   const { t, lang, setLang } = useLanguage();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+      setMobileMenuOpen(false);
+    };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
