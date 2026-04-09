@@ -187,6 +187,19 @@ html[dir="rtl"] .font-display {
     100% { box-shadow: 0 8px 24px rgba(0,0,0,0.5), 0 0 14px rgba(248,113,113,0.2), inset 0 1px 0 rgba(248,113,113,0.1); }
   }
 
+  /* ── Label text flash ──────────────────────────────────────── */
+  @keyframes labelFlash {
+    0%   { text-shadow: none; letter-spacing: 0.1em; }
+    18%  { text-shadow: 0 0 12px rgba(0,212,255,1), 0 0 30px rgba(0,212,255,0.7), 0 0 60px rgba(0,212,255,0.35); letter-spacing: 0.13em; }
+    38%  { text-shadow: 0 0 4px  rgba(0,212,255,0.4); letter-spacing: 0.1em; }
+    62%  { text-shadow: 0 0 10px rgba(0,212,255,0.85), 0 0 24px rgba(0,212,255,0.55), 0 0 48px rgba(0,212,255,0.25); letter-spacing: 0.115em; }
+    100% { text-shadow: 0 0 6px  rgba(0,212,255,0.28); letter-spacing: 0.1em; }
+  }
+
+  .label-flash {
+    animation: labelFlash 2s cubic-bezier(0.22, 1, 0.36, 1) 0.55s 1 forwards;
+  }
+
   /* ── Navbar specific ───────────────────────────────────────── */
   @keyframes navBorderPulse {
     0%,100% {

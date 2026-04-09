@@ -32,7 +32,10 @@ export function FinalCTA({ onOpenModal }: { onOpenModal: () => void }) {
               visible: { transition: { staggerChildren: 0.1, delayChildren: 0.25 } },
             }}
           >
-            <motion.span variants={headingVariants} className="inline-block text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest mb-4">
+            <motion.span
+              variants={headingVariants}
+              className={`inline-block text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest mb-4${inView ? " label-flash" : ""}`}
+            >
               {t.finalCta.label}
             </motion.span>
             <motion.h2 variants={headingVariants} className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white mb-4 sm:mb-6 leading-tight">
