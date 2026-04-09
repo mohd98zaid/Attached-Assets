@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/context/LanguageContext";
 
 // ── Replace with the real BOKURA WhatsApp number (digits only, with country code) ──
-const WHATSAPP_NUMBER = "971XXXXXXXXXX";
+const WHATSAPP_NUMBER = "971555660189";
 
 function buildWhatsAppMessage(fields: {
   name: string;
