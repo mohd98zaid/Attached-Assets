@@ -1,179 +1,130 @@
-# BOKURA Accounting & Bookkeeping L.L.C — Landing Page
+# BOKURA Accounting & Bookkeeping L.L.C — Ultra-Premium Landing Page
 
-Ultra-premium landing page for **BOKURA Accounting & Bookkeeping L.L.C**, an Accounting & Audit Office based in Deira, Dubai. Built with a deep space dark theme, iOS-inspired Liquid Glass UI, Three.js 3D animated background, full bilingual English/Arabic support with RTL layout, and comprehensive UAE/GCC SEO.
+[![Status: Production Ready](https://img.shields.io/badge/Status-Production--Ready-00d4ff?style=for-the-badge)](https://bokura.org)
+[![SEO: Hyper-Optimized](https://img.shields.io/badge/SEO-UAE--GCC--Hyper--Optimized-d4a017?style=for-the-badge)](https://bokura.org)
+[![AEO: AI Ready](https://img.shields.io/badge/AEO-AI--Search--Ready-ff0055?style=for-the-badge)](https://bokura.org)
 
----
-
-## Features
-
-- **Deep Space Dark Theme** — Deep black background (`#050508`) with electric cyan (`#00d4ff`) and gold (`#d4a017`) accents
-- **iOS 26 Liquid Glass UI** — Frosted glass card components with blur, saturation, and layered depth
-- **Three.js 3D Background** — Animated particle field rendered on a WebGL canvas behind all content
-- **Bilingual EN / AR** — Full English and Arabic translations across all 11 sections; language preference saved to `localStorage`
-- **RTL Layout** — `dir="rtl"` applied dynamically; Noto Sans Arabic font; CSS logical properties throughout
-- **Hover Glow Effects** — Framer Motion spring animations + CSS `@keyframes` glow flash on every card — cyan for service/testimonial cards, gold for Why Us cards, red for problem items
-- **UAE / GCC SEO** — 35+ English keywords, 18+ Arabic keywords, 5 JSON-LD schemas (LocalBusiness, FAQPage ×2, BreadcrumbList, WebSite), `hreflang` for `en-AE` / `ar-AE`, geo meta tags, `robots.txt`, and image sitemap
-- **Inquiry Modal** — Animated contact form with bilingual field labels
+An ultra-premium, high-conversion landing page for **BOKURA Accounting & Bookkeeping L.L.C**, based in Deira, Dubai. This project combines cutting-edge web technology with state-of-the-art SEO and AI Engine Optimization (AEO) to dominate the UAE accounting market.
 
 ---
 
-## Tech Stack
+## ✨ Key Features
+
+### 🌌 Elite Visual Experience
+- **Deep Space Aesthetic** — A custom-crafted dark theme (`#050508`) utilizing electric cyan and gold accents for a premium, professional feel.
+- **Three.js 3D Background** — An interactive, high-performance particle field rendered on WebGL, providing a dynamic sense of depth.
+- **Liquid Glass UI** — iOS-inspired frosted glass components with complex backdrop blurs, saturation layers, and responsive depth.
+- **Micro-Animations** — Subtle Framer Motion spring physics and CSS-based hover glow effects across all interactive cards.
+
+### 🌍 Global & Local Reach
+- **Native Bilingual Support** — Seamless English and Arabic switching with high-fidelity translations.
+- **RTL-First Architecture** — Full Right-To-Left support with dynamic `dir` attributes, logical CSS properties, and Noto Sans Arabic typography.
+- **Localized for GCC** — Specifically tuned for the UAE, Saudi Arabia, Kuwait, Bahrain, Qatar, and Oman.
+
+### 🤖 AI & Search Dominance (AEO/SEO)
+- **AEO (AI Engine Optimization)** — Optimized for citations in ChatGPT (with search), Perplexity, and Google AI Overviews.
+- **Multi-Layered Schema** — 7+ JSON-LD blocks including `AccountingService`, `LocalBusiness`, `Organization`, `WebPage`, `BreadcrumbList`, and bilingual `FAQPage`.
+- **Strategic Geo-Targeting** — Embedded coordinate data and regional meta-tags for Deira, Dubai (AE-DU).
+- **Automated Sitemaps** — Machine-readable image sitemaps and AI-friendly `robots.txt` configuration.
+
+---
+
+## 🛠 Tech Stack
 
 | Layer | Technology |
-|---|---|
-| Framework | React 18 + TypeScript |
-| Build Tool | Vite 7 |
-| Styling | Tailwind CSS v4 |
-| Animation | Framer Motion |
-| 3D Background | Three.js |
-| Fonts | Inter, Syne (display), Noto Sans Arabic |
-| Package Manager | pnpm (monorepo) |
-| i18n | Custom `LanguageContext` + `translations.ts` |
+|:--- |:--- |
+| **Framework** | React 18 (TypeScript) |
+| **Build Tool** | Vite 7 |
+| **Styling** | Tailwind CSS v4 |
+| **Animation** | Framer Motion |
+| **3D Rendering** | Three.js |
+| **Typography** | Inter, Syne (Display), Noto Sans Arabic |
+| **Monorepo** | pnpm Workspaces |
 
 ---
 
-## Project Structure
+## 📂 Project Architecture
 
-```
-/
+```bash
+BOKURA/
 ├── artifacts/
-│   └── bokura-landing/          # Landing page artifact
-│       ├── public/
-│       │   ├── bokura-logo.png  # Logo / favicon / OG image
-│       │   ├── robots.txt
-│       │   └── sitemap.xml
+│   └── bokura-landing/         # Core Landing Page Package
+│       ├── public/             # Static Assets (Sitemaps, robots.txt, Logos)
 │       ├── src/
-│       │   ├── components/      # All 11 page sections
-│       │   │   ├── Navbar.tsx
-│       │   │   ├── Hero.tsx
-│       │   │   ├── ProblemSection.tsx
-│       │   │   ├── Services.tsx
-│       │   │   ├── WhyUs.tsx
-│       │   │   ├── About.tsx
-│       │   │   ├── Testimonials.tsx
-│       │   │   ├── FAQ.tsx
-│       │   │   ├── FinalCTA.tsx
-│       │   │   ├── Footer.tsx
-│       │   │   ├── FloatingCTA.tsx
-│       │   │   ├── InquireModal.tsx
-│       │   │   └── ThreeBackground.tsx
-│       │   ├── context/
-│       │   │   └── LanguageContext.tsx  # EN/AR toggle + RTL logic
-│       │   ├── i18n/
-│       │   │   └── translations.ts     # All bilingual strings
-│       │   ├── App.tsx
-│       │   ├── main.tsx
-│       │   └── index.css               # Liquid Glass, glow animations, RTL
-│       ├── index.html                  # All SEO meta tags + JSON-LD schemas
-│       ├── vite.config.ts
-│       └── package.json
-├── package.json                        # Monorepo root
-└── pnpm-workspace.yaml
+│       │   ├── components/     # High-fidelity UI sections
+│       │   ├── context/        # Bilingual & RTL State Management
+│       │   ├── i18n/           # Centralized Translation Strings (translations.ts)
+│       │   └── index.css       # Core Design System & Animations
+│       ├── index.html          # SEO Meta Layer & Schema Markup
+│       └── package.json        # Service-specific dependencies
+├── package.json                # Monorepo root
+└── pnpm-workspace.yaml         # Workspace configuration
 ```
 
 ---
 
-## Prerequisites
+## 🚀 Quick Start
 
-Make sure you have the following installed:
-
-- **Node.js** v18 or later (project tested on v24)
-- **pnpm** v9 or later
-
-Install pnpm if you don't have it:
+### 1. Installation
+Ensure you have **Node.js v18+** and **pnpm v9+** installed.
 
 ```bash
-npm install -g pnpm
-```
+# Clone the repository
+git clone https://github.com/plumsNpearls/BOKURA.git
+cd BOKURA
 
----
-
-## Running Locally
-
-### 1. Clone the repository
-
-```bash
-git clone <your-repo-url>
-cd <repo-folder>
-```
-
-### 2. Install dependencies
-
-From the monorepo root, install all workspace dependencies at once:
-
-```bash
+# Install all workspace dependencies
 pnpm install
 ```
 
-### 3. Set required environment variables
-
-The Vite config requires `PORT` and `BASE_PATH` to be set before starting. Create a `.env` file inside the landing page artifact directory:
-
+### 2. Environment Setup
+Create a `.env` file in `artifacts/bokura-landing/`:
 ```bash
-# artifacts/bokura-landing/.env
 PORT=3000
 BASE_PATH=/
 ```
 
-Or pass them inline when running the dev command (see step 4).
-
-### 4. Start the development server
-
-**Using the `.env` file (recommended):**
-
+### 3. Local Development
 ```bash
 pnpm --filter @workspace/bokura-landing run dev
 ```
-
-**Or pass environment variables inline:**
-
-```bash
-PORT=3000 BASE_PATH=/ pnpm --filter @workspace/bokura-landing run dev
-```
-
-The site will be available at: **[http://localhost:3000](http://localhost:3000)**
+Site will be live at: **[http://localhost:3000](http://localhost:3000)**
 
 ---
 
-## Building for Production
+## 🏗 Deployment & Production
 
+### Build for Production
 ```bash
 PORT=3000 BASE_PATH=/ pnpm --filter @workspace/bokura-landing run build
 ```
+Build output: `artifacts/bokura-landing/dist/public/`
 
-Output is written to `artifacts/bokura-landing/dist/public/`.
-
-To preview the production build locally:
-
+### Preview Production Build
 ```bash
 PORT=3000 BASE_PATH=/ pnpm --filter @workspace/bokura-landing run serve
 ```
 
 ---
 
-## SEO Configuration
+## 📈 SEO & AEO Management
 
-After deploying, complete the SEO setup by:
+The project is pre-configured for the production domain: **[https://bokura.org/](https://bokura.org/)**.
 
-1. **Google Search Console** — Verify your domain and replace the commented-out `google-site-verification` meta tag in `index.html`
-2. **Bing Webmaster Tools** — Replace the `msvalidate.01` meta tag placeholder in `index.html`
-3. **Phone number** — Replace `+971-4-XXX-XXXX` in `index.html` (LocalBusiness schema) with the real office number
-4. **Canonical URL** — If you move to a custom domain, replace all instances of `attached-assets-techedubyte.replit.app` in `index.html` and `sitemap.xml` with your domain
+### Managing Content
+To update text, services, or FAQs without touching code, edit the translation file:
+`artifacts/bokura-landing/src/i18n/translations.ts`
 
----
+### Audit & Compliance
+A comprehensive SEO/AEO audit has been performed. You can review the full findings and strategic recommendations in:
+`artifacts/bokura-landing/seo_audit_report.md`
 
-## Adding / Editing Content
-
-All visible text on the page lives in one file:
-
-```
-artifacts/bokura-landing/src/i18n/translations.ts
-```
-
-Each key has an English (`en`) and Arabic (`ar`) version. Edit this file to update any heading, description, FAQ, testimonial, or service without touching component files.
+### To-Do Before Launch
+1. **Verification**: After connecting the domain to your host, uncomment and update the Google/Bing verification tags in `index.html`.
+2. **Analytics**: Inject your GA4 / Google Tag Manager snippets into the `<head>` of `index.html`.
 
 ---
 
-## License
-
-Private — All rights reserved. BOKURA Accounting and Bookkeeping L.L.C.
+## 📄 License
+**Private** — All rights reserved. BOKURA Accounting and Bookkeeping L.L.C.
+Designed with ❤️ for the future of financial services in Dubai.
