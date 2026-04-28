@@ -77,12 +77,12 @@ function MagneticButton({
   const handleMouseLeave = () => { x.set(0); y.set(0); };
 
   return (
-    <motion.div style={{ x: springX, y: springY }} className="inline-block">
+    <motion.div style={{ x: springX, y: springY }} className="w-full sm:w-auto">
       {href ? (
         <a
           ref={ref as React.Ref<HTMLAnchorElement>}
           href={href}
-          className={className}
+          className={`${className} block w-full sm:inline-block sm:w-auto`}
           style={style}
           data-testid={testId}
           onMouseMove={handleMouseMove}
@@ -94,7 +94,7 @@ function MagneticButton({
         <button
           ref={ref as React.Ref<HTMLButtonElement>}
           onClick={onClick}
-          className={className}
+          className={`${className} block w-full sm:inline-block sm:w-auto`}
           style={style}
           data-testid={testId}
           onMouseMove={handleMouseMove}
@@ -204,12 +204,12 @@ export function Hero({ onOpenModal }: { onOpenModal: () => void }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-16 px-2"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-12 sm:mb-16 px-4"
           >
             <MagneticButton
               onClick={onOpenModal}
               testId="button-hero-cta-primary"
-              className="bg-primary text-black px-7 py-4 rounded-full font-semibold text-sm sm:text-base transition-all duration-300 active:scale-95"
+              className="bg-primary text-black px-7 py-4 rounded-full font-semibold text-sm sm:text-base transition-all duration-300 active:scale-95 text-center"
               style={{ boxShadow: "0 0 24px rgba(0,212,255,0.5)" }}
             >
               {t.hero.ctaPrimary}
@@ -223,7 +223,6 @@ export function Hero({ onOpenModal }: { onOpenModal: () => void }) {
               {t.hero.ctaSecondary}
             </MagneticButton>
           </motion.div>
-
           {/* Trust badges */}
           <motion.div
             initial={{ opacity: 0 }}
